@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Valorant eDPI Calculator | eDPI Calculator</title>
+  <meta name="description" content="Calculate your Valorant eDPI instantly. Compare your aim sensitivity with professional players (TenZ, aspas, Jinggg), optimize your mouse DPI settings, and read aim tips.">
+  <meta name="keywords" content="Valorant eDPI calculator, Valorant sensitivity, mouse DPI, pro sensitivities, eDPI Calculator, eDPI formula">
+  
+  <!-- OpenGraph Social Tags -->
+  <meta property="og:title" content="Valorant eDPI Calculator | eDPI Calculator">
+  <meta property="og:description" content="Calculate your eDPI instantly and optimize your aim for Valorant. See how your settings compare with top professional players.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="eDPI Calculator">
+  
+  <!-- Fonts & Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css?v=1.3">
+</head>
+<body>
+
+  <!-- Dynamic Header Placeholder -->
+  <div id="header-placeholder"></div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero container">
+      <h1>VALORANT eDPI CALCULATOR</h1>
+      <p>Instantly calculate your effective Dots Per Inch (eDPI) and optimize your in-game sensitivity for competitive mechanical precision.</p>
+    </section>
+
+    <!-- Calculator Card Section -->
+    <section class="calculator-section container">
+      <div class="glass-card">
+        <div class="calculator-grid">
+          
+          <!-- Inputs Column -->
+          <div class="calculator-inputs">
+            
+            <!-- Mouse DPI Input -->
+            <div class="input-group">
+              <div class="input-header">
+                <label for="mouse-dpi">Mouse DPI (CPI)</label>
+                <input type="number" id="mouse-dpi" class="numeric-input" value="800" min="100" max="16000" step="50">
+              </div>
+              <div class="slider-container">
+                <button type="button" class="slider-btn" id="dpi-minus" aria-label="Decrease DPI">&minus;</button>
+                <input type="range" id="mouse-dpi-slider" class="range-slider" min="100" max="3200" step="50" value="800">
+                <button type="button" class="slider-btn" id="dpi-plus" aria-label="Increase DPI">&plus;</button>
+              </div>
+              <div class="preset-container">
+                <button type="button" class="preset-btn active" data-value="400">400</button>
+                <button type="button" class="preset-btn active" data-value="800">800</button>
+                <button type="button" class="preset-btn" data-value="1200">1200</button>
+                <button type="button" class="preset-btn" data-value="1600">1600</button>
+              </div>
+            </div>
+
+            <!-- Valorant Sensitivity Input -->
+            <div class="input-group">
+              <div class="input-header">
+                <label for="val-sens">Valorant Sensitivity</label>
+                <input type="number" id="val-sens" class="numeric-input" value="0.40" min="0.01" max="4.00" step="0.01">
+              </div>
+              <div class="slider-container">
+                <button type="button" class="slider-btn" id="sens-minus" aria-label="Decrease Sensitivity">&minus;</button>
+                <input type="range" id="val-sens-slider" class="range-slider" min="0.01" max="2.00" step="0.01" value="0.40">
+                <button type="button" class="slider-btn" id="sens-plus" aria-label="Increase Sensitivity">&plus;</button>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Result Box Column -->
+          <div class="calculator-results med-glow" id="result-card">
+            <div>
+              <div class="result-header">Your eDPI is:</div>
+              <div class="result-value-container">
+                <span class="result-value" id="result-value">320</span>
+              </div>
+              <div class="result-category-badge" id="category-badge">
+                <span class="dot" id="category-dot"></span>
+                <span id="category-text">Low / Pro range</span>
+              </div>
+              <div class="formula-display" style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); margin-top: 16px;">
+                Formula: eDPI = Sensitivity &times; DPI
+              </div>
+            </div>
+ 
+            <!-- Pin Visualizer bar -->
+            <div class="sens-visualizer">
+              <div class="visualizer-label">
+                <span>Very Low</span>
+                <span>Low / Pro</span>
+                <span>Medium</span>
+                <span>High</span>
+              </div>
+              <div class="visualizer-bar">
+                <div class="visualizer-zones">
+                  <div class="zone zone-very-low" title="Very Low range: 0 - 200 eDPI"></div>
+                  <div class="zone zone-low" title="Low / Pro range: 200 - 400 eDPI"></div>
+                  <div class="zone zone-medium" title="Medium range: 400 - 800 eDPI"></div>
+                  <div class="zone zone-high" title="High range: 800+ eDPI"></div>
+                </div>
+                <div class="visualizer-pin" id="visualizer-pin" style="left: 45%;"></div>
+              </div>
+            </div>
+
+            <div class="result-actions">
+              <button type="button" class="btn btn-secondary" id="reset-btn">Reset</button>
+              <button type="button" class="btn btn-primary" id="copy-btn">Copy eDPI</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Aim Sensitivity Guide Grid -->
+    <section class="content-section container">
+      <h2 class="section-title">Sensitivity Aim Optimization</h2>
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/>
+            </svg>
+            What is eDPI?
+          </h3>
+          <p>eDPI stands for **effective Dots Per Inch**. While mouse DPI measures hardware resolution and in-game sensitivity modifies it, eDPI combines both values to show your actual physical movement output. It allows gamers with different mouse resolutions to compare their real in-game sensitivity side-by-side.</p>
+        </div>
+        <div class="info-card">
+          <h3>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-4 6h-4v2h4v2h-4v2h4v2H9V7h6v2z"/>
+            </svg>
+            How to Calculate eDPI?
+          </h3>
+          <p>The calculation is simple: multiply your mouse hardware DPI by your in-game Valorant sensitivity settings. <br><code>eDPI = DPI &times; Valorant Sensitivity</code>.<br> For example, if your mouse is set to 800 DPI and your in-game slider is at 0.35, your eDPI is: 800 &times; 0.35 = 280.</p>
+        </div>
+        <div class="info-card">
+          <h3>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+            </svg>
+            Finding Your Aim Range
+          </h3>
+          <p>Tactical shooters like Valorant require high precision. Most professional players use a <strong>Low to Medium eDPI (between 200 and 400)</strong> to make micro-adjustments easily. High sensitivity (400+) yields fast turnarounds but sacrifices consistency, while low sensitivity (below 200) requires ample arm movements.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Professional Player Comparison Section -->
+    <section class="table-section container">
+      <h2 class="section-title">Professional Valorant Sensitivity Matrix</h2>
+      <p style="color: var(--text-secondary); margin-bottom: 24px; font-size: 15px;">See how your configurations stack up against professional FPS competitors. Adjust your parameters above, and matches within &plusmn;15 eDPI of your profile will highlight in real-time!</p>
+      
+      <div class="table-wrapper">
+        <table class="pro-table">
+          <thead>
+            <tr>
+              <th>Player Name</th>
+              <th>Mouse DPI</th>
+              <th>In-Game Sens</th>
+              <th>eDPI Output</th>
+              <th>Sensation Category</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-edpi="240">
+              <td class="pro-name-cell"><span class="pro-name">TenZ</span> (Sentinels)</td>
+              <td>800</td>
+              <td>0.30</td>
+              <td>240</td>
+              <td><span class="badge badge-low">Low / Pro</span></td>
+            </tr>
+            <tr data-edpi="240">
+              <td class="pro-name-cell"><span class="pro-name">Jinggg</span> (Paper Rex)</td>
+              <td>1600</td>
+              <td>0.15</td>
+              <td>240</td>
+              <td><span class="badge badge-low">Low / Pro</span></td>
+            </tr>
+            <tr data-edpi="320">
+              <td class="pro-name-cell"><span class="pro-name">aspas</span> (Leviatán)</td>
+              <td>800</td>
+              <td>0.40</td>
+              <td>320</td>
+              <td><span class="badge badge-low">Low / Pro</span></td>
+            </tr>
+            <tr data-edpi="216">
+              <td class="pro-name-cell"><span class="pro-name">yay</span> (Bleed)</td>
+              <td>800</td>
+              <td>0.27</td>
+              <td>216</td>
+              <td><span class="badge badge-low">Low / Pro</span></td>
+            </tr>
+            <tr data-edpi="224">
+              <td class="pro-name-cell"><span class="pro-name">Chronicle</span> (Fnatic)</td>
+              <td>800</td>
+              <td>0.28</td>
+              <td>224</td>
+              <td><span class="badge badge-low">Low / Pro</span></td>
+            </tr>
+            <tr data-edpi="220">
+              <td class="pro-name-cell"><span class="pro-name">Boaster</span> (Fnatic)</td>
+              <td>800</td>
+              <td>0.275</td>
+              <td>220</td>
+              <td><span class="badge badge-low">Low / Pro</span></td>
+            </tr>
+            <tr data-edpi="180">
+              <td class="pro-name-cell"><span class="pro-name">FNS</span> (NRG)</td>
+              <td>400</td>
+              <td>0.45</td>
+              <td>180</td>
+              <td><span class="badge badge-very-low">Very Low</span></td>
+            </tr>
+            <tr data-edpi="576">
+              <td class="pro-name-cell"><span class="pro-name">Hiko</span> (Retired Pro)</td>
+              <td>1600</td>
+              <td>0.36</td>
+              <td>576</td>
+              <td><span class="badge badge-medium">Medium</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section container">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="faq-container">
+        
+        <div class="faq-item">
+          <button class="faq-question">
+            What is the average Valorant professional player eDPI?
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <p>The average eDPI among professional Valorant players is approximately **280**. Most pros stay within the **200 to 320 eDPI** range, balancing smooth mouse movements with precise micro-adjustments for hitting headshots.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Should I use 400, 800, or 1600 Mouse DPI?
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <p>From an eDPI standpoint, they can perform identically (e.g., 800 DPI at 0.4 sens equals 1600 DPI at 0.2 sens). However, **1600 DPI offers slightly lower input latency** and smoother pixel transitions compared to 400 DPI. Choosing 800 or 1600 DPI is generally recommended for both Windows desktop comfort and FPS stability.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            What is the difference between DPI and eDPI?
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <p>**DPI** (Dots Per Inch) is a hardware measurement representing mouse sensor sensitivity relative to physical distance traveled. **eDPI** (Effective Dots Per Inch) is a standardized score calculated by multiplying physical DPI by in-game software sensitivity multipliers, indicating the actual cursor travel speed inside the game engine.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Does a higher eDPI make my crosshair shake?
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. If your eDPI is very high (above 500), small physical hand micro-shakes or muscle contractions translate into significant crosshair jitter in-game, which can degrade long-range accuracy and mechanical consistency.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Dynamic Footer Placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Component & Logic JavaScript Bundles -->
+  <script src="js/components.js?v=1.3"></script>
+  <script src="js/calculator.js?v=1.3"></script>
+</body>
+</html>

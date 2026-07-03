@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Contact Us | eDPI Calculator</title>
+  <meta name="description" content="Get in touch with eDPI Calculator. Send us your aim feedback, report calculation bugs, propose features, or share suggestions for our eDPI tools.">
+  <meta name="keywords" content="contact eDPI Calculator, support form, feedback, bug report">
+  
+  <!-- Fonts & Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css?v=1.3">
+</head>
+<body>
+
+  <!-- Dynamic Header Placeholder -->
+  <div id="header-placeholder"></div>
+
+  <main>
+    <section class="content-section container">
+      <div class="hero">
+        <h1>GET IN TOUCH</h1>
+        <p>Have questions, aim suggestions, or bug reports? We would love to hear from you. Drop us a message below!</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Contact Form -->
+        <div class="glass-card contact-card">
+          <form id="contact-form" class="contact-form">
+            <div class="form-group">
+              <label for="contact-name">Full Name</label>
+              <input type="text" id="contact-name" class="form-control" placeholder="e.g. John Doe" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="contact-email">Email Address</label>
+              <input type="email" id="contact-email" class="form-control" placeholder="e.g. john@example.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-subject">Subject</label>
+              <input type="text" id="contact-subject" class="form-control" placeholder="e.g. Feature Suggestion / Bug Report" required>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-message">Message</label>
+              <textarea id="contact-message" class="form-control" placeholder="Write your message here..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+
+        <!-- Contact Info Sidebars -->
+        <div class="contact-info-panel">
+          <div class="info-box">
+            <h3>Aim Feedback</h3>
+            <p>Are you a pro player or aim coach with feedback on our sensitivity ranges and aim tips? Write to us, and help improve calculations for the FPS community!</p>
+          </div>
+          
+          <div class="info-box">
+            <h3>Technical Bug Reports</h3>
+            <p>If you experience browser lag, display inaccuracies, or navigation failures on mobile devices, please specify your hardware and browser info so our team can patch it.</p>
+          </div>
+
+          <div class="info-box">
+            <h3>Feature Requests</h3>
+            <p>Want support for CS2, Apex Legends, or sensitivity conversion matrices? Share your proposals and help build the ultimate aim configurations index!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Success Modal Overlay -->
+  <div class="modal-overlay" id="success-modal">
+    <div class="modal-content">
+      <div class="modal-icon">
+        <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor">
+          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+        </svg>
+      </div>
+      <h3>Message Sent!</h3>
+      <p>Thank you for reaching out to eDPI Calculator. Your message has been successfully logged. Our staff will review your feedback and get back to you shortly.</p>
+      <button type="button" class="btn btn-primary" id="modal-close-btn">Close Window</button>
+    </div>
+  </div>
+
+  <!-- Dynamic Footer Placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Component Logic & Interaction JS -->
+  <script src="js/components.js?v=1.3"></script>
+  <script src="js/contact.js?v=1.3"></script>
+</body>
+</html>

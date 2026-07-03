@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Valorant Crosshairs Gallery | eDPI Calculator</title>
+  <meta name="description" content="Browse, search, and copy Valorant crosshair codes of top professional players (TenZ, aspas, yay, Jinggg) and fun community designs. Optimize your crosshair.">
+  <meta name="keywords" content="Valorant crosshairs, pro crosshairs, TenZ crosshair, copy crosshair code, Valorant codes, eDPI Calculator crosshairs">
+  
+  <!-- Fonts & Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css?v=1.3">
+</head>
+<body>
+
+  <!-- Dynamic Header Placeholder -->
+  <div id="header-placeholder"></div>
+
+  <main>
+    <!-- Hero Header -->
+    <section class="hero container">
+      <h1>VALORANT CROSSHAIR GALLERY</h1>
+      <p>Browse and copy import settings from the best competitive FPS players and community-created designs.</p>
+    </section>
+
+    <!-- Filters & Cards Grid -->
+    <section class="crosshair-gallery-section container">
+      <div class="filter-bar">
+        <!-- Search Input -->
+        <div class="search-wrapper">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="crosshair-search" class="search-input" placeholder="Search player or team...">
+        </div>
+        
+        <!-- Category Filters -->
+        <div class="filter-btn-group">
+          <button type="button" class="filter-btn active" data-filter="all">All</button>
+          <button type="button" class="filter-btn" data-filter="pro">Pro Players</button>
+          <button type="button" class="filter-btn" data-filter="dot">Dot Settings</button>
+          <button type="button" class="filter-btn" data-filter="fun">Fun / Custom</button>
+        </div>
+      </div>
+
+      <!-- Cards Grid -->
+      <div class="crosshair-grid" id="crosshair-grid">
+        <!-- Dynamically populated via crosshair.js -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Dynamic Footer Placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Component Logic & Logic JS -->
+  <script src="js/components.js?v=1.3"></script>
+  <script src="js/crosshair.js?v=1.3"></script>
+</body>
+</html>
